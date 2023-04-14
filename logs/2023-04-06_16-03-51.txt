@@ -1,0 +1,86 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 56 21.3M   56 12.0M    0     0  9850k      0  0:00:02  0:00:01  0:00:01 9842k100 21.3M  100 21.3M    0     0  14.2M      0  0:00:01  0:00:01 --:--:-- 14.1M
+npm WARN deprecated node-pre-gyp@0.17.0: Please upgrade to @mapbox/node-pre-gyp: the non-scoped node-pre-gyp package is deprecated and only the @mapbox scoped package will recieve updates in the future
+
+added 67 packages, and audited 68 packages in 2s
+
+3 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+npm notice 
+npm notice New major version of npm available! 8.15.0 -> 9.6.4
+npm notice Changelog: <https://github.com/npm/cli/releases/tag/v9.6.4>
+npm notice Run `npm install -g npm@9.6.4` to update!
+npm notice 
+
+changed 1 package, and audited 126 packages in 411ms
+
+18 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+Started refreshing 8 application (/) commands.
+Server is Ready!
+connected to mongodb
+Successfully reloaded 8 application (/) commands.
+3 928
+Logged in as Movin Frens#2718!
+2023-04-06T14:32:59.000Z
+2023-04-06T14:32:59.000Z
+2023-04-06T14:32:59.000Z
+2023-04-06T14:32:59.000Z
+2023-04-06T14:32:59.000Z
+2023-04-06T14:32:59.000Z
+2023-04-06T14:32:23.000Z
+2023-04-06T14:32:23.000Z
+2023-04-06T14:22:47.000Z
+2023-04-06T14:22:47.000Z
+/home/minecraft/multicraft/servers/server460793/node_modules/@discordjs/rest/dist/index.js:933
+        throw new DiscordAPIError(data, "code" in data ? data.code : data.error, status, method, url, requestData);
+              ^
+
+DiscordAPIError[50001]: Missing Access
+    at SequentialHandler.runRequest (/home/minecraft/multicraft/servers/server460793/node_modules/@discordjs/rest/dist/index.js:933:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async SequentialHandler.queueRequest (/home/minecraft/multicraft/servers/server460793/node_modules/@discordjs/rest/dist/index.js:712:14)
+    at async REST.request (/home/minecraft/multicraft/servers/server460793/node_modules/@discordjs/rest/dist/index.js:1321:22)
+    at async TextChannel.send (/home/minecraft/multicraft/servers/server460793/node_modules/discord.js/src/structures/interfaces/TextBasedChannel.js:176:15) {
+  rawError: { message: 'Missing Access', code: 50001 },
+  code: 50001,
+  status: 403,
+  method: 'POST',
+  url: 'https://discord.com/api/v10/channels/1093550339942273046/messages',
+  requestBody: {
+    files: [],
+    json: {
+      content: undefined,
+      tts: false,
+      nonce: undefined,
+      embeds: [
+        {
+          color: 5109855,
+          title: '',
+          description: '[**Movin Frens #130 Sold!**](https://opensea.io/assets/ethereum/0x5b80a9383ea914ad8eed822a5db1bd330baf2f6b/130)\n' +
+            '\n' +
+            '    **Price: 0.0270 ETH** | $50.38 USD',
+          thumbnail: {
+            url: 'https://i.seadn.io/gcs/files/9c174a2f6695ff7bf57442c837f06211.gif?w=500&auto=format'
+          },
+          fields: [ [Object], [Object], [Object] ],
+          timestamp: '2023-04-06T14:32:59.000Z'
+        }
+      ],
+      components: undefined,
+      username: undefined,
+      avatar_url: undefined,
+      allowed_mentions: undefined,
+      flags: undefined,
+      message_reference: undefined,
+      attachments: undefined,
+      sticker_ids: undefined,
+      thread_name: undefined
+    }
+  }
+}
