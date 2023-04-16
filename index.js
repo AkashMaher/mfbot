@@ -9,6 +9,8 @@ require('dotenv').config({ path: '.env' })
 const axios = require('axios');
 const token = process.env['token']
 const oskey = process.env['OSKEY']
+const mf = process.env['webhook']
+const mfSales = new WebhookClient({url:mf});
 
 const {clientId,guildId,MemberRole,OGRole,WLRole, OwnerId, Amos} = require('./config.json')
 
@@ -23,6 +25,7 @@ const {checkByAdmin} = require("./src/DB/checkOGbyAdmin")
 const {setLastSaleTime, getLastSaleTime} = require("./src/DB/setTime")
 const {saleEmbed} = require('./src/saleEmbed')
 const {raffleEmbed} = require("./src/raffle.js")
+const {rarityEmbed} = require("./src/rarity.js")
 
 
 client.commands = new Collection();
@@ -125,10 +128,13 @@ const handleEvents = async () => {
 
 const sendSaleInfo = async (events) => {
     const channel = client.channels.cache.find(channel =>     channel.id === '1093550339942273046')
+    let j = events?.length-1
     for(let i = 0;i<events?.length;i++) {
-    let sale = await saleEmbed(events[i])
+    let sale = await saleEmbed(events[j])
     // console.log(sale)
+    j--;
     channel.send({embeds:[sale]})
+    await mfSales.send({embeds:[sale]})
     }
 }
 
@@ -186,8 +192,8 @@ function checkIfWLable(userId){
 // buttons
 
 // client.on(Events.InteractionCreate,async interaction => {
-//   if(interaction.guild.id !== guildId) return interaction.reply({content:'incorrect', emphemeral:true});
-//   if(!interaction.isButton()) return interaction.reply({content:'error', emphemeral:true});
+//   if(interaction.guild.id !== guildId) return interaction.reply({content:'incorrect', ephemeral:true});
+//   if(!interaction.isButton()) return interaction.reply({content:'error', ephemeral:true});
 //    const role = interaction.guild.roles.cache.find(role => role.id === OGRole);
 //   if (!role || !interaction.member.roles.cache.has(role.id)) {
 //     return interaction.reply('You don\'t have the required role to use this button!');
@@ -209,7 +215,7 @@ const randomPicker = (min, max) => {
 
 
 client.on(Events.InteractionCreate, async interaction => {
-  if(interaction.guild.id !== guildId) return interaction.reply({content:"Access Denied",emphemeral:true})
+  if(interaction.guild.id !== guildId) return interaction.reply({content:"Access Denied",ephemeral:true})
 	if (interaction.isChatInputCommand()) {
 	if(interaction.replied) return console.log("already replied");
 	const command = interaction.client.commands.get(interaction.commandName);
@@ -259,6 +265,27 @@ client.on(Events.InteractionCreate, async interaction => {
       } return interaction.reply({content:'<#1049577209469345826>', ephemeral:true});
 		
 		} 
+
+    // else if(command.data.name == 'gif') {
+    //   const token_id = interaction?.options?._hoistedOptions?.[0]?.value;
+    //   // console.log(token_id)
+    //   await interaction.deferReply({content:'Fetching details', ephemeral:true})
+    //   let res = await gifEmbed(token_id);
+    //   // console.log(res)
+    //   await interaction.editReply({embeds:[res], ephemeral:false})
+    // }
+
+    else if(command.data.name == 'rarity') {
+      const token_id = interaction?.options?._hoistedOptions?.[0]?.value;
+      // console.log(token_id)
+      if(token_id<=0 || token_id>1511) return await interaction.reply({content:'invalid token id', ephemeral:true})
+      await interaction.deferReply({content:'Fetching details', ephemeral:false})
+      let res = await rarityEmbed(token_id);
+      console.log(res)
+      await interaction.editReply({embeds:[res], ephemeral:false})
+    }
+
+
      else if(command.data.name == 'raffle') {
       if(interaction.user.id == OwnerId || interaction?.user?.id == Amos) {
         // await interaction.deferReply({content:'drawing winner...', ephemeral:true})
