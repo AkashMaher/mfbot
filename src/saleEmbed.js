@@ -34,8 +34,7 @@ let d = new Date(`${asset?.transaction?.timestamp}.000Z`);
   const dataEmbed = {
 	color: 0x4df85f,
 	title: '',
-	description: `[**${asset?.asset?.name} Sold!**](https://opensea.io/assets/ethereum/0x5b80a9383ea914ad8eed822a5db1bd330baf2f6b/${asset?.asset?.token_id})\n**Rarity Rank: ${rank}**\n
-    **Price: ${(parseInt(asset?.total_price)/(1000000000000000000)).toFixed(4)} ${asset?.payment_token?.symbol}** | $${((parseInt(asset?.total_price)/(1000000000000000000))*(parseInt(asset?.payment_token?.usd_price))).toFixed(2)} USD`,
+	description: `[**${asset?.asset?.name} Sold!**](https://opensea.io/assets/ethereum/0x5b80a9383ea914ad8eed822a5db1bd330baf2f6b/${asset?.asset?.token_id})\n**Rarity Rank: ${rank}**\n**Price: ${(parseInt(asset?.total_price)/(1000000000000000000)).toFixed(4)} ${asset?.payment_token?.symbol}** | $${((parseInt(asset?.total_price)/(1000000000000000000))*(parseInt(asset?.payment_token?.usd_price))).toFixed(2)} USD`,
 	thumbnail: {
 		url: asset?.asset?.image_url,
 	},
