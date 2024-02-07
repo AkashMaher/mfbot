@@ -14,7 +14,8 @@ const mfSales = new WebhookClient({ url: mf });
 
 const { clientId, guildId, OGRole } = require('./config.json')
 
-const { getMongoClient } = require('./src/dbFunctions')
+const { getMongoClient, getLastSaleTime, setLastSaleTime } = require('./src/dbFunctions')
+const { saleEmbed } = require('./src/osFunctions')
 
 
 client.commands = new Collection();
