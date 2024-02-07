@@ -1,38 +1,0 @@
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 54 21.3M   54 11.6M    0     0  9625k      0  0:00:02  0:00:01  0:00:01 9618k100 21.3M  100 21.3M    0     0  14.1M      0  0:00:01  0:00:01 --:--:-- 14.0M
-npm WARN deprecated node-pre-gyp@0.17.0: Please upgrade to @mapbox/node-pre-gyp: the non-scoped node-pre-gyp package is deprecated and only the @mapbox scoped package will recieve updates in the future
-
-added 67 packages, and audited 68 packages in 2s
-
-3 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-npm notice 
-npm notice New major version of npm available! 8.15.0 -> 9.6.4
-npm notice Changelog: <https://github.com/npm/cli/releases/tag/v9.6.4>
-npm notice Run `npm install -g npm@9.6.4` to update!
-npm notice 
-
-added 7 packages, changed 1 package, and audited 126 packages in 968ms
-
-18 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-Started refreshing 8 application (/) commands.
-Server is Ready!
-connected to mongodb
-Successfully reloaded 8 application (/) commands.
-2 827
-Logged in as Movin Frens#2718!
-/home/minecraft/multicraft/servers/server460793/index.js:102
-	const getTime = await getLastSaleTime()
-	                      ^
-
-TypeError: getLastSaleTime is not a function
-    at handleEvents (/home/minecraft/multicraft/servers/server460793/index.js:102:24)
-    at Timeout._onTimeout (/home/minecraft/multicraft/servers/server460793/index.js:94:11)
-    at listOnTimeout (node:internal/timers:559:17)
-    at processTimers (node:internal/timers:502:7)
