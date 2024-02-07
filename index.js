@@ -99,13 +99,12 @@ client.on(Events.ClientReady, () => {
       handleEvents();
     }, 120000);
   }, 120000);
-  /*client.user.setPresence({ activities: [{ name: `movinfrens.com` }], status: 'online' });*/
+  client.user.setPresence({ activities: [{ name: `movinfrens.com`, type: 3 }], status: 'online', });
 });
 
 
 const handleEvents = async () => {
   let getTime = await getLastSaleTime()
-  console.log(getTime)
 
   const options = {
     method: 'GET',
