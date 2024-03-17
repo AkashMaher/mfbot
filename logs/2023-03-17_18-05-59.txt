@@ -1,38 +1,0 @@
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 19 21.3M   19 4207k    0     0  4105k      0  0:00:05  0:00:01  0:00:04 4105k100 21.3M  100 21.3M    0     0  13.9M      0  0:00:01  0:00:01 --:--:-- 13.9M
-npm WARN deprecated node-pre-gyp@0.17.0: Please upgrade to @mapbox/node-pre-gyp: the non-scoped node-pre-gyp package is deprecated and only the @mapbox scoped package will recieve updates in the future
-
-added 67 packages, and audited 68 packages in 2s
-
-3 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-npm notice 
-npm notice New major version of npm available! 8.15.0 -> 9.6.2
-npm notice Changelog: <https://github.com/npm/cli/releases/tag/v9.6.2>
-npm notice Run `npm install -g npm@9.6.2` to update!
-npm notice 
-
-changed 1 package, and audited 118 packages in 497ms
-
-17 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-/home/minecraft/multicraft/servers/server460793/node_modules/mongodb-connection-string-url/lib/index.js:9
-    return (connectionString.startsWith('mongodb://') ||
-                             ^
-
-TypeError: Cannot read properties of undefined (reading 'startsWith')
-    at connectionStringHasValidScheme (/home/minecraft/multicraft/servers/server460793/node_modules/mongodb-connection-string-url/lib/index.js:9:30)
-    at new ConnectionString (/home/minecraft/multicraft/servers/server460793/node_modules/mongodb-connection-string-url/lib/index.js:85:34)
-    at parseOptions (/home/minecraft/multicraft/servers/server460793/node_modules/mongodb/lib/connection_string.js:204:17)
-    at new MongoClient (/home/minecraft/multicraft/servers/server460793/node_modules/mongodb/lib/mongo_client.js:46:63)
-    at Object.<anonymous> (/home/minecraft/multicraft/servers/server460793/src/DB/submitWallet.js:3:21)
-    at Module._compile (node:internal/modules/cjs/loader:1126:14)
-    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1180:10)
-    at Module.load (node:internal/modules/cjs/loader:1004:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:839:12)
-    at Module.require (node:internal/modules/cjs/loader:1028:19)
